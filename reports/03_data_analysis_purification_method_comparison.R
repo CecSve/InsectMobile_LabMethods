@@ -10,9 +10,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-
-setwd("H:/Documents/Insektmobilen/PhD Courses/Stats for BioScience II")
-
 #### set environment ####
 library(tidyverse)
 library(tidyselect)
@@ -237,7 +234,7 @@ save_plot("plots/nmds_purification.png", nmds, base_height = 8, base_width = 12)
 abund <- tasvs # based on presence absence
 method <- data$purification_abr
 
-# analysis with indicator value - explained in De Cáceres et al. (2010) - the accounts for unequal sample sizes
+# analysis with indicator value - explained in De C?ceres et al. (2010) - the accounts for unequal sample sizes
 indval <-  multipatt(abund, method, func = "IndVal.g", duleg = TRUE, control = how(nperm=999)) # number of permutations affect the precision of the p-value
 summary(indval, indvalcomp=TRUE)
 
