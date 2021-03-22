@@ -10,8 +10,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-setwd("H:/Documents/Insektmobilen/PhD Courses/Stats for BioScience II")
-
 #### set environment ####
 library(tidyverse)
 library(tidyselect)
@@ -39,16 +37,16 @@ metadata <- metadata %>% filter(Primer == 'fwh') %>% filter(Sample_type %in% c('
 
 # the extraction comparison needs to be based on the same samples, so the corresponding ethanol and non-destructive samples needs to be extracted
 etoh <- metadata %>% filter(Sample_type == 'ethanol')
-etoh <- etoh[-c(18:22), ] # remove the samples that have been extracted on 5 痞
+etoh <- etoh[-c(18:22), ] # remove the samples that have been extracted on 5 繕l
 etoh <-
   etoh %>% mutate(
     SampleID = recode(
       SampleID,
-      "P74.1A_50無" = "P74.1A",
-      "P67.2A_50無" = "P67.2A",
-      "P66.2A_50無" = "P66.2A",
-      "P87.2B_50無" = "P87.2B",
-      "P87.1B_50無" = "P87.1B"
+      "P74.1A_50繕L" = "P74.1A",
+      "P67.2A_50繕L" = "P67.2A",
+      "P66.2A_50繕L" = "P66.2A",
+      "P87.2B_50繕L" = "P87.2B",
+      "P87.1B_50繕L" = "P87.1B"
     )
   ) # change the names to not contain volume input
 
@@ -63,11 +61,11 @@ metadata <-
   metadata %>% mutate(
     SampleID_nosize = recode(
       SampleID_nosize,
-      "P74.1A_50無" = "P74.1A",
-      "P67.2A_50無" = "P67.2A",
-      "P66.2A_50無" = "P66.2A",
-      "P87.2B_50無" = "P87.2B",
-      "P87.1B_50無" = "P87.1B"
+      "P74.1A_50繕L" = "P74.1A",
+      "P67.2A_50繕L" = "P67.2A",
+      "P66.2A_50繕L" = "P66.2A",
+      "P87.2B_50繕L" = "P87.2B",
+      "P87.1B_50繕L" = "P87.1B"
     )
   ) # change the names to not contain volume input
 
@@ -230,7 +228,7 @@ save_plot("plots/nmds_extraction.png", nmds, base_height = 8, base_width = 12)
 abund <- tasvs # based on presence absence
 method <- data$Extraction_method
 
-# analysis with indicator value - explained in De C塶eres et al. (2010) - the accounts for unequal sample sizes
+# analysis with indicator value - explained in De C?ceres et al. (2010) - the accounts for unequal sample sizes
 indval <-  multipatt(abund, method, func = "IndVal.g", duleg = TRUE, control = how(nperm=999)) # number of permutations affect the precision of the p-value
 summary(indval, indvalcomp=TRUE)
 
