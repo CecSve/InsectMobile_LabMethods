@@ -3,7 +3,6 @@
 # primers pairs: fwh (CO1), Art (CO1), INS01 (16S)
 library(tidyverse)
 # begin with the fwh dataset and then for art and ins as well
-setwd("H:/Documents/Insektmobilen/PhD Courses/Stats for BioScience II")
 
 # first we will include the otu table
 lulified_fwh_nochim <- readRDS("raw-data/lulified_fwh_nochim.RDS") # read in the lulufied RDS file
